@@ -1,5 +1,6 @@
 from flask import Flask, url_for, Response
 import flask
+import json
 app = Flask(__name__)
 
 dat = {
@@ -16,9 +17,11 @@ dat = {
 
 @app.route('/', methods=['POST'])
 def api_root():
+    d = flask.request.data
+    datadict = json.loads(d)
+    res=datadict['prerequisites']['shippingaddress']['state']
+    dat['returnans']=res*2
     tt = flask.jsonify(**dat)
-    print tt
-    print type(tt)
     return tt
 
 @app.route('/articles')
