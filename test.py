@@ -4,6 +4,11 @@ app = Flask(__name__)
 
 dat = {
             "id": 1,
+            "sendmms": False,
+            "showauthurl": False,
+            "text" : "Please work",
+            "speech" : "Please please work",
+            "status" : "OK",
                 "name": "This stuff is online",
                     "price": 12.50,
                         "tags": ["home", "green"]
@@ -17,6 +22,7 @@ def api_root():
     return tt
 
 @app.route('/articles')
+
 def api_articles():
     return 'List of ' + url_for('api_articles')
 
