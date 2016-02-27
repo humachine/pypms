@@ -20,7 +20,7 @@ def api_root():
     d = flask.request.data
     datadict = json.loads(d)
     res=datadict['prerequisites']['shippingaddress']['state']
-    dat['returnans']=res*2
+    dat['returnans']=res*4
     tt = flask.jsonify(**dat)
     return tt
 
