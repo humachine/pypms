@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 dat = {
             "id": 1,
-                "name": "A green door",
+                "name": "ZZZZZZZZZZZZZA green door",
                     "price": 12.50,
                         "tags": ["home", "green"]
                         }
