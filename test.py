@@ -11,6 +11,21 @@ dat = {
             "speech" : "Please please work",
             "status" : "OK",
                         }
+npmres = {
+        'sendmms': True,
+        'showauthurl': False,
+        'authstate': None,
+        'text': "Please work",
+        'speech': "please speak",
+        'status': "OK",
+        'webhookreply': None, 
+        'images': [
+            {
+                'imageurl': "http://api.dev.promptapp.io/images/random/helloworld.gif", 
+                'alttext': "Hello World!"
+                }
+            ]
+        }
 
 target = 'https://api.dev.promptapp.io/api/1.0/webhook/@test101_00026'
 headers = {'content-type': 'application/json'}
@@ -40,7 +55,7 @@ def api_root():
     res.body = dat
     print res
 
-    return res
+    return json.dumps(npmres)
 
 @app.route('/articles')
 
