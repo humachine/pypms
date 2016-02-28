@@ -29,8 +29,8 @@ npmres = {
 
 target = 'https://api.dev.promptapp.io/api/1.0/webhook/@test101_00026'
 headers={}
-headers['Prompt-API-key']='26e805e78f0d8ca28098c14077500a42'
-payload = {'message': 'Some junk message that hopefully gets delivered'}
+headers['Prompt-API-key']='7adde7aba673f3d7f382f2d59b41ffd5'
+payload = {'message': 'Not too sure'}
 payload['uuid']="517c843897fd4411b70ab3256e39f9da60b14483f0b2893e268fe12d57ac09d1"
 
 
