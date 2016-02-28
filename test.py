@@ -53,6 +53,7 @@ def jarvis(inp):
 
 @app.route('/', methods=['POST'])
 def api_root():
+    print flask.request
     d = flask.request.data
     h = flask.request.headers
     for i in h:
