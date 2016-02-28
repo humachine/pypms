@@ -7,11 +7,9 @@ app = Flask(__name__)
 dat = {
             "sendmms": False,
             "showauthurl": False,
-            "authstate": None,
             "text" : "Please work",
             "speech" : "Please please work",
             "status" : "OK",
-            "webhookreply": None,
                         }
 
 target = 'https://api.dev.promptapp.io/api/1.0/webhook/@test101_00026'
