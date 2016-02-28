@@ -27,13 +27,10 @@ def api_root():
     print flask.request.method
 
     d = flask.request.data
+    print 'Data follows . . . . . . . . . .'
     print d
+
     datadict = json.loads(d)
-    if datadict['prerequisites']['shippingaddress']['state']:
-        res=datadict['prerequisites']['shippingaddress']['state']
-        dat['returnans']=res*4
-    else:
-        print '....\n...\nNOT FOUND\n\n'
     tt = flask.jsonify(**dat)
     print type(tt)
 
