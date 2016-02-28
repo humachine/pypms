@@ -23,8 +23,10 @@ payload = {'some': 'data'}
 payload['uuid']="517c843897fd4411b70ab3256e39f9da60b14483f0b2893e268fe12d57ac09d1"
 
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['POST', 'GET'])
 def api_root():
+    print request.method
+
     d = flask.request.data
     print d
     datadict = json.loads(d)
