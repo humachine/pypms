@@ -43,6 +43,8 @@ def api_root():
     print d
 
     r=requests.post(target, json.dumps(payload), headers=headers)
+    print 'Below is the response results.. . '
+    print r
     print r.content
 
     return json.dumps(npmres)
