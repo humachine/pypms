@@ -32,12 +32,16 @@ def api_root():
         res=datadict['prerequisites']['shippingaddress']['state']
         dat['returnans']=res*4
     tt = flask.jsonify(**dat)
+    print type(tt)
 
+    #r=requests.post(target, json.dumps(payload), headers=headers)
+    #print r.content
 
-    r=requests.post(target, json.dumps(payload), headers=headers)
-    print r.content
+    res = flask.Response("Foo Bar")
+    res.headers['Prompt-API-key']='26e805e78f0d8ca28098c14077500a42'
+    res.headers['content-type'] = 'application/json'
 
-    return tt
+    return res
 
 @app.route('/articles')
 
