@@ -21,11 +21,10 @@ payload['uuid']="517c843897fd4411b70ab3256e39f9da60b14483f0b2893e268fe12d57ac09d
 
 @app.route('/', methods=['POST', 'GET'])
 def api_root():
-    print 'Yoooooooooooooo``````````````````````````222222222222'
-    print flask.request.method
-
     d = flask.request.data
-    print 'Data follows . . . . . . . . . .'
+    h = flask.request.headers
+    print h
+    print
     print d
 
     datadict = json.loads(d)
@@ -38,8 +37,10 @@ def api_root():
     res = flask.Response("Foo Bar")
     res.headers['Prompt-API-key']='26e805e78f0d8ca28098c14077500a42'
     res.headers['content-type'] = 'application/json'
+    res.body = dat
+    print res
 
-    return tt
+    return res
 
 @app.route('/articles')
 
