@@ -72,7 +72,14 @@ def api_root():
 
     return json.dumps(ans)
 
+
+resp={"ok":"okk"}
+@app.route('/code', methods=['POST', 'GET'])
+def api_code():
+    print flask.request, type(flask.request)
+    return json.dumps(resp)
+
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=2564)
 
 
