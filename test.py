@@ -33,19 +33,43 @@ head['Prompt-API-key']='7adde7aba673f3d7f382f2d59b41ffd5'
 payload = {'message': 'Not too sure'}
 payload['uuid']="517c843897fd4411b70ab3256e39f9da60b14483f0b2893e268fe12d57ac09d1"
 
-OUR_APP_KEY = '7adde7aba673f3d7f382f2d59b41ffd5' 
+OUR_API_KEY = '7adde7aba673f3d7f382f2d59b41ffd5' 
 
+def checkIfRequestFromPrompt(inp):
+    return inp==OUR_API_KEY or True
 
-@app.route('/', methods=['POST', 'GET'])
+def jarvis(inp):
+    if 'do' not in inp['message']:
+        res = []
+        res[:] = npmres[:]
+        res['message'] = 'Invalid Input. Try again'
+        return res
+    if not True:
+        r=requests.post(target, json.dumps(payload), headers=head)
+    return npmres
+
+    
+
+@app.route('/', methods=['POST'])
 def api_root():
+    print 'Starting now'
     d = flask.request.data
     h = flask.request.headers
-    print h
-    print d
+    print h, type(h)
+    for i in h:
+        a,b = i
+        if a.lower() == 'Prompt-Api-Key'.lower():
+            if not checkIfRequestFromPrompt(b):
+                print 'Unauthorized access . . .'
+                return
 
-    #r=requests.post(target, json.dumps(payload), headers=head)
+    dic = json.loads(d)
+    print dic
 
-    return json.dumps(npmres)
+    ans = npmres
+    ans=jarvis(dic)
+
+    return json.dumps(ans)
 
 @app.route('/articles')
 
