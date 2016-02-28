@@ -28,8 +28,8 @@ npmres = {
         }
 
 target = 'https://api.dev.promptapp.io/api/1.0/webhook/@test101_00026'
-headers={'Content-Type': 'application/json'} 
-headers['Prompt-Api-key']='7adde7aba673f3d7f382f2d59b41ffd5'
+head={'Content-Type': 'application/json'} 
+head['Prompt-API-key']='7adde7aba673f3d7f382f2d59b41ffd5'
 payload = {'message': 'Not too sure'}
 payload['uuid']="517c843897fd4411b70ab3256e39f9da60b14483f0b2893e268fe12d57ac09d1"
 
@@ -42,7 +42,7 @@ def api_root():
     print
     print d
 
-    r=requests.post(target, json.dumps(payload), headers=headers)
+    r=requests.post(target, json.dumps(payload), headers=head)
     print 'Below is the response results.. . '
     print r
     print r.content
