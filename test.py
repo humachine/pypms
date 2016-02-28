@@ -28,9 +28,9 @@ npmres = {
         }
 
 target = 'https://api.dev.promptapp.io/api/1.0/webhook/@test101_00026'
-headers = {'content-type': 'application/json'}
+headers={}
 headers['Prompt-API-key']='26e805e78f0d8ca28098c14077500a42'
-payload = {'some': 'data'}
+payload = {'message': 'Some junk message that hopefully gets delivered'}
 payload['uuid']="517c843897fd4411b70ab3256e39f9da60b14483f0b2893e268fe12d57ac09d1"
 
 
@@ -42,18 +42,8 @@ def api_root():
     print
     print d
 
-    datadict = json.loads(d)
-    tt = flask.jsonify(**dat)
-    print type(tt)
-
-    #r=requests.post(target, json.dumps(payload), headers=headers)
-    #print r.content
-
-    res = flask.Response("Foo Bar")
-    res.headers['Prompt-API-key']='26e805e78f0d8ca28098c14077500a42'
-    res.headers['content-type'] = 'application/json'
-    res.body = dat
-    print res
+    r=requests.post(target, json.dumps(payload), headers=headers)
+    print r.content
 
     return json.dumps(npmres)
 
