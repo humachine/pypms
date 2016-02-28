@@ -51,7 +51,7 @@ def jarvis(inp):
     else:
         return createResult("Received: "+inp['message'])
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['POST', 'GET'])
 def api_root():
     print flask.request
     d = flask.request.data
