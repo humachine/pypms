@@ -31,6 +31,8 @@ def api_root():
     if datadict['prerequisites']['shippingaddress']['state']:
         res=datadict['prerequisites']['shippingaddress']['state']
         dat['returnans']=res*4
+    else:
+        print '....\n...\nNOT FOUND\n\n'
     tt = flask.jsonify(**dat)
     print type(tt)
 
@@ -41,7 +43,7 @@ def api_root():
     res.headers['Prompt-API-key']='26e805e78f0d8ca28098c14077500a42'
     res.headers['content-type'] = 'application/json'
 
-    return res
+    return tt
 
 @app.route('/articles')
 
