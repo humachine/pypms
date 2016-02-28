@@ -33,19 +33,17 @@ head['Prompt-API-key']='7adde7aba673f3d7f382f2d59b41ffd5'
 payload = {'message': 'Not too sure'}
 payload['uuid']="517c843897fd4411b70ab3256e39f9da60b14483f0b2893e268fe12d57ac09d1"
 
+OUR_APP_KEY = '7adde7aba673f3d7f382f2d59b41ffd5' 
+
 
 @app.route('/', methods=['POST', 'GET'])
 def api_root():
     d = flask.request.data
     h = flask.request.headers
     print h
-    print
     print d
 
-    r=requests.post(target, json.dumps(payload), headers=head)
-    print 'Below is the response results.. . '
-    print r
-    print r.content
+    #r=requests.post(target, json.dumps(payload), headers=head)
 
     return json.dumps(npmres)
 
