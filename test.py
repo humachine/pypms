@@ -58,6 +58,7 @@ def api_root():
     h = flask.request.headers
     for i in h:
         a,b = i
+        print a, b
         if a.lower() == 'Prompt-Api-Key'.lower():
             if not checkIfRequestFromPrompt(b):
                 print 'Unauthorized access . . .'
