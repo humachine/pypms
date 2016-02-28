@@ -5,15 +5,13 @@ import requests
 app = Flask(__name__)
 
 dat = {
-            "id": 1,
             "sendmms": False,
             "showauthurl": False,
+            "authstate": None,
             "text" : "Please work",
             "speech" : "Please please work",
             "status" : "OK",
-                "name": "This stuff is online",
-                    "price": 12.50,
-                        "tags": ["home", "green"]
+            "webhookreply": None,
                         }
 
 target = 'https://api.dev.promptapp.io/api/1.0/webhook/@test101_00026'
@@ -26,9 +24,7 @@ payload['uuid']="517c843897fd4411b70ab3256e39f9da60b14483f0b2893e268fe12d57ac09d
 @app.route('/', methods=['POST', 'GET'])
 def api_root():
     print 'Yoooooooooooooo``````````````````````````222222222222'
-    print request.method
-    print 'Another line to close things up'
-    print 
+    print flask.request.method
 
     d = flask.request.data
     print d
